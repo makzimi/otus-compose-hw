@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -22,6 +23,11 @@ android {
 
     buildFeatures {
         dataBinding = true
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.7.6"
     }
 
     buildTypes {
@@ -55,4 +61,13 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.google.material)
     implementation(libs.kotlin.stdlib)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.foundation.android)
+    implementation(libs.androidx.runtime.android)
+    implementation(libs.androidx.runtime.tracing)
+    implementation(libs.androidx.ui.tooling.preview.android)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.activity.compose)
 }
